@@ -6,10 +6,14 @@ export class ImageGallery extends Component {
     return (
       <div>
         <ul className={stl.ImageGallery}>
-          <ImageGalleryItem
-            toogleModal={this.props.toogleModal}
-            images={this.props.images}
-          ></ImageGalleryItem>
+          {this.props.images.map(({ id, webformatURL, largeImageURL }) => (
+            <ImageGalleryItem
+              toogleModal={this.props.toogleModal}
+              id={id}
+              webformatURL={webformatURL}
+              largeImageURL={largeImageURL}
+            ></ImageGalleryItem>
+          ))}
         </ul>
       </div>
     );
