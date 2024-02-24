@@ -40,7 +40,7 @@ export class App extends Component {
       }
       const totalPages = Math.floor(data.total / 12);
       this.setState(prev => ({
-        images: prev.images ? [...prev.images, ...data.hits] : data.hits,
+        images: [...prev.images, ...data.hits],
         totalPages: totalPages,
       }));
     } catch (error) {
@@ -66,15 +66,15 @@ export class App extends Component {
           <Modal
             toogleModal={this.toogleModal}
             largeImageURL={this.state.largeImageURL}
-          ></Modal>
+          />
         )}
-        <Searchbar onSubmit={this.onSubmit}></Searchbar>
-        {this.state.loading && <Loader></Loader>}
+        <Searchbar onSubmit={this.onSubmit} />
+        {this.state.loading && <Loader />}
         {this.state.images && (
           <ImageGallery
             toogleModal={this.toogleModal}
             images={this.state.images}
-          ></ImageGallery>
+          />
         )}
 
         {this.state.images.length > 0 &&
