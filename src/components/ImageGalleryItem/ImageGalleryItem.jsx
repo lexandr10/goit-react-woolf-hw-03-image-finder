@@ -1,7 +1,7 @@
 import stl from './ImageGallertItem.module.css';
 export const ImageGalleryItem = props => {
   return (
-    props.images &&
+    props.images.length &&
     props.images.map(({ id, webformatURL, largeImageURL }) => (
       <li className={stl.ImageGalleryItem} key={id}>
         <img
