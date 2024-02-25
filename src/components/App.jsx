@@ -50,10 +50,10 @@ export class App extends Component {
       this.setState({ loading: false });
     }
   };
-  toogleModal = LargeImg => {
+  toogleModal = largeImg => {
     this.setState(prev => ({
       isHidden: !prev.isHidden,
-      largeImageURL: LargeImg,
+      largeImageURL: largeImg,
     }));
   };
   handlerLoadMore = () => {

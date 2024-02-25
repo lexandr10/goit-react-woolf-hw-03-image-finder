@@ -1,10 +1,15 @@
 import stl from './ImageGallertItem.module.css';
-export const ImageGalleryItem = ({ id, webformatURL, largeImageURL }) => {
+export const ImageGalleryItem = ({
+  id,
+  webformatURL,
+  largeImageURL,
+  toogleModal,
+}) => {
   return (
     <li className={stl.ImageGalleryItem} key={id}>
       <img
         className={stl.ImageGalleryItemImage}
-        onClick={() => this.props.toogleModal(largeImageURL)}
+        onClick={() => toogleModal(largeImageURL)}
         src={webformatURL}
         alt={id}
       />
